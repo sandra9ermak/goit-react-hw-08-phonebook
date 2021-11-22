@@ -39,4 +39,8 @@
 
 body {
   background-color: rgba(47, 69, 196, 0.87);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-width: 1400px;
+  margin: auto;
 }

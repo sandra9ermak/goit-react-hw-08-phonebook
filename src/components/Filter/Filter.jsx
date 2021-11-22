@@ -8,6 +8,8 @@ const Filter = () => {
   const dispatch = useDispatch();
 
   return (
+    <>
+      <h2 className={styles.mainTitle}>Contacts</h2>
     <label>
       <input
         className={styles.inputSearch}
@@ -20,7 +22,8 @@ const Filter = () => {
       <button className={styles.button} type="submit">
         Search
       </button>
-    </label>
+      </label>
+      </>
   );
 };
 

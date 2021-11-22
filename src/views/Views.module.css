@@ -1,0 +1,79 @@
+.section {
+  text-align: center;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 500px;
+}
+
+.homePage {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.homeText {
+  font-size: 25px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.input {
+  border-radius: 4px;
+  width: 250px;
+  height: 30px;
+  border: 2px solid rgb(49, 45, 45);
+  padding-left: 10px;
+  /* background-color: rgba(77, 72, 72, 0.836); */
+  background-color: transparent;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 30px;
+}
+
+.title {
+  color: rgba(241, 235, 235, 0.945);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.form {
+  text-align: center;
+  width: 250px;
+  align-items: center;
+  margin: auto;
+  padding-top: 40px;
+}
+
+.buttonForm {
+  /* display: flex;
+  text-align: center;
+  align-items: center;
+  margin: auto; */
+
+  border-radius: 4px;
+  padding: 5px 15px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.733);
+  border-color: transparent;
+  color: rgb(209, 200, 200);
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.buttonForm:hover,
+.buttonForm:focus {
+  box-shadow: 1px 2px 2px 2px rgba(34, 60, 80, 0.53);
+}
+
+.mainTitle {
+  padding-top: 30px;
+  color: #fff;
+  letter-spacing: 0.5em;
+  margin-bottom: 50px;
+  text-align: center;
+  margin: auto;
+}

@@ -50,6 +50,8 @@ const Form = () => {
   };
 
   return (
+    <>
+    <h1 className={styles.mainTitle}>Phonebook</h1>
     <form onSubmit={formSubmit} className={styles.form}>
       <label className={styles.labelInput}>
         <h3 className={styles.title}>Name</h3>
@@ -82,7 +84,8 @@ const Form = () => {
       <button className={styles.buttonForm} type="submit">
         Add name
       </button>
-    </form>
+      </form>
+      </>
   );
 };
 
