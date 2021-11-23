@@ -1,4 +1,3 @@
-import Form from "../components/Form/Form";
 import Filter from "../components/Filter/Filter";
 import Contact from "../components/Contact/Contact";
 import s from "./Views.module.css";
@@ -15,7 +14,6 @@ const ContactsView = () => {
 
   return (
     <div className={s.section}>
-      <Form />
       <Filter />
       <Contact />
     </div>

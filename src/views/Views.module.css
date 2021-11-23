@@ -25,12 +25,16 @@
   width: 250px;
   height: 30px;
   border: 2px solid rgb(49, 45, 45);
+  color: rgba(255, 255, 255, 0.801);
   padding-left: 10px;
-  /* background-color: rgba(77, 72, 72, 0.836); */
   background-color: transparent;
   font-weight: 500;
   letter-spacing: 0.1em;
   margin-bottom: 30px;
+}
+
+.input::placeholder {
+  color: #000;
 }
 
 .title {
@@ -41,7 +45,7 @@
 
 .form {
   text-align: center;
-  width: 250px;
+  width: 270px;
   align-items: center;
   margin: auto;
   padding-top: 40px;
@@ -76,4 +80,10 @@
   margin-bottom: 50px;
   text-align: center;
   margin: auto;
+}
+
+.pageNotFound {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 200px;
 }

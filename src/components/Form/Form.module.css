@@ -21,7 +21,6 @@
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
-  display: flex;
 }
 
 .buttonForm:hover,
@@ -42,23 +41,28 @@
   margin-bottom: 50px;
 }
 
-/* .section {
+.form {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.labelInput:not(:last-child) {
+  margin-right: 10px;
+}
+
+.formSection {
   text-align: center;
   margin: auto;
   align-items: center;
   text-align: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  width: 500px;
-} */
-
-.form {
-  display: flex;
-  margin: 0 auto;
-  align-items: center;
-  margin-bottom: 30px;
+  width: 350px;
 }
 
-.labelInput:not(:last-child) {
-  margin-right: 10px;
+.inputsDiv {
+  display: flex;
 }

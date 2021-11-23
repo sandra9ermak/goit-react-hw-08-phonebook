@@ -50,42 +50,44 @@ const Form = () => {
   };
 
   return (
-    <>
-    <h1 className={styles.mainTitle}>Phonebook</h1>
-    <form onSubmit={formSubmit} className={styles.form}>
-      <label className={styles.labelInput}>
-        <h3 className={styles.title}>Name</h3>
-        <input
-          className={styles.input}
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleInputChange}
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          placeholder="Name"
-          title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-          required
-        />
-      </label>
-      <label className={styles.labelInput}>
-        <h3 className={styles.title}>Number</h3>
-        <input
-          className={styles.input}
-          type="tel"
-          name="number"
-          value={number}
-          onChange={handleInputChange}
-          placeholder="Number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-          required
-        />
-      </label>
-      <button className={styles.buttonForm} type="submit">
-        Add name
-      </button>
+    <div className={styles.formSection}>
+      <h1 className={styles.mainTitle}>Phonebook</h1>
+      <form onSubmit={formSubmit} className={styles.form}>
+        <div className={styles.inputsDiv}>
+          <label className={styles.labelInput}>
+            <h3 className={styles.title}>Name</h3>
+            <input
+              className={styles.input}
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleInputChange}
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              placeholder="Name"
+              title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+              required
+            />
+          </label>
+          <label className={styles.labelInput}>
+            <h3 className={styles.title}>Number</h3>
+            <input
+              className={styles.input}
+              type="tel"
+              name="number"
+              value={number}
+              onChange={handleInputChange}
+              placeholder="Number"
+              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+              title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
+              required
+            />
+          </label>
+        </div>
+        <button className={styles.buttonForm} type="submit">
+          Add name
+        </button>
       </form>
-      </>
+    </div>
   );
 };
 

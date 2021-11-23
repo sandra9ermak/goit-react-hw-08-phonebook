@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import Notiflix from "notiflix";
 
 axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
@@ -12,21 +13,39 @@ const token = {
   },
 };
 
-const register = createAsyncThunk("auth/register", async (credentials) => {
-  try {
-    const { data } = await axios.post("/users/signup", credentials);
-    token.set(data.token);
-    return data;
-  } catch (error) {}
-});
+const register = createAsyncThunk(
+  "auth/register",
+  async (credentials, rejectWithValue) => {
+    try {
+      const { data } = await axios.post("/users/signup", credentials);
+      token.set(data.token);
+      return data;
+    } catch (error) {
+      if (error.response.status === 400) {
+        return rejectWithValue(Notiflix.Notify.failure("Enter valid data"));
+      }
+      return rejectWithValue(Notiflix.Notify.failure("Please try again"));
+    }
+  }
+);
 
-const login = createAsyncThunk("auth/login", async (credentials) => {
-  try {
-    const { data } = await axios.post("/users/login", credentials);
-    token.set(data.token);
-    return data;
-  } catch (error) {}
-});
+const login = createAsyncThunk(
+  "auth/login",
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post("/users/login", credentials);
+      token.set(data.token);
+      return data;
+    } catch (error) {
+      if (error.response.status === 400) {
+        return rejectWithValue(
+          Notiflix.Notify.failure("Invalid data, please try again")
+        );
+      }
+      return rejectWithValue(Notiflix.Notify.failure("Please try again"));
+    }
+  }
+);
 
 const logout = createAsyncThunk("auth/logout", async () => {
   try {
@@ -41,13 +60,15 @@ const fetchCurrentUser = createAsyncThunk(
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
     if (persistedToken === null) {
-      return;
+      return thunkAPI.rejectWithValue("user is logged out");
     }
     token.set(persistedToken);
     try {
-      const response = axios.get("/users/current");
-      return response;
-    } catch (error) {}
+      const { data } = await axios.get("/users/current");
+      return data;
+    } catch (error) {
+      Notiflix.Notify.failure(error.message);
+    }
   }
 );
 
