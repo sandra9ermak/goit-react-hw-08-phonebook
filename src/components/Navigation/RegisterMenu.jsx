@@ -13,7 +13,7 @@ const RegisterMenu = () => {
         Sign up
       </NavLink>
       <NavLink to="/login" className={s.navLink} activeClassName={s.activeLink}>
-        Login
+        Log In
       </NavLink>
     </nav>
   );

@@ -31,7 +31,7 @@ const LoginView = () => {
 
   return (
     <>
-      <h1 className={styles.mainTitle}>Login</h1>
+      <h1 className={styles.mainTitle}>Log In</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.labelInput}>
           <h3 className={styles.title}>Email</h3>
